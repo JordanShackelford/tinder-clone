@@ -6,5 +6,11 @@
     <a class="p-2 text-dark" href="#">Support</a>
     <a class="p-2 text-dark" href="#">Pricing</a>
   </nav>
-  <a class="btn btn-outline-primary" href="#">Sign up</a>
+
+  <% if account_signed_in? %>
+    <%= link_to "Browse", "#%>
+  <% else %>
+    <%= link_to "Sign in", new_account_session_path, class: "btn btn-secondary mr-1" %>
+    <%= link_to "Sign up", new_account_registration_path, class: "btn btn-outline-primary"%>
+  <% end %>
 </header>
